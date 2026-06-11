@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Voice Guide</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+<h1>🎧 QR Voice Guidance System</h1>
+
+{% for item in instructions %}
+
+<button onclick="speak('{{item[1]}}')">
+
+{{item[1]}}
+
+</button>
+
+{% endfor %}
+
+</div>
+
+<script src="{{ url_for('static',
+filename='script.js') }}"></script>
+
+</body>
+</html>
